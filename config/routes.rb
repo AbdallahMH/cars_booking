@@ -8,4 +8,5 @@ Rails.application.routes.draw do
 
   get "car_details", to: "car#index"
   get "booking", to: "booking#index"
+
 end

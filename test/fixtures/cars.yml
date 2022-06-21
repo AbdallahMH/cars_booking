@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  car_name: MyString
+  make: MyString
+  model: MyString
+  kilometers_traveled: 1
+  latitude: 1.5
+  longitude: 1.5
+  images: MyText
+  avaliable_from: 2022-06-21 12:06:41
+  avaliable_until: 2022-06-21 12:06:41
+
+two:
+  car_name: MyString
+  make: MyString
+  model: MyString
+  kilometers_traveled: 1
+  latitude: 1.5
+  longitude: 1.5
+  images: MyText
+  avaliable_from: 2022-06-21 12:06:41
+  avaliable_until: 2022-06-21 12:06:41
