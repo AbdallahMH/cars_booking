@@ -1,1 +1,26 @@
 <h1> Car Page </h1>
+
+<%= car = Car.find(params[:id]) %>
+
+  <div class="card" style="width: 18rem; margin-top: 50px">
+    <img src= "<%= car.images[0]  %>" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title"> <%= car.car_name %></h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+        content.</p>
+
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"> <i class="fas fa-tools"></i> <%= car.make %> </li>
+      <li class="list-group-item"> <i class="fas fa-car"></i> <%= car.model %> </li>
+      <li class="list-group-item"> <i class="fas fa-road"></i> <%= car.kilometers_traveled %> </li>
+
+      <li class="list-group-item"> <i class="fas fa-calendar-alt"></i> <%= car.avaliable_from %> </li>
+      <li class="list-group-item"> <i class="fas fa-calendar-alt"></i> <%= car.avaliable_until %> </li>
+
+      <li class="list-group-item"> <i class="fas fa-location-arrow"></i> <%= car.latitude %> </li>
+    </ul>
+    <div class="card-body">
+      <%= link_to "Book Car", {controller: 'booking', action: 'index', id: car.id }, class: "btn btn-primary" %>
+    </div>
+  </div>

@@ -18,7 +18,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_21_090641) do
     t.integer "kilometers_traveled"
     t.float "latitude"
     t.float "longitude"
-    t.text "images"
+    t.text "images", default: "--- []\n"
     t.datetime "avaliable_from"
     t.datetime "avaliable_until"
     t.datetime "created_at", null: false

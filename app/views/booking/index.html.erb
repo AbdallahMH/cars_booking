@@ -1,1 +1,16 @@
 <h1> Booking Page </h1>
+<% car = Car.find(params[:id]) %>
+<div class="container d-flex flex-column align-items-center py-4 py-xl-5">
+  <h2 id="car-name"> <%= car.car_name %> </h2>
+  <div class="row gy-4 w-100" style="max-width: 800px;">
+    <div class="col-12">
+      <div class="card"><img id="car-image" class="card-img w-100 d-block" src="<%= car.images[0] %>">
+        <div class="card-img-overlay text-center d-flex flex-column justify-content-center align-items-center p-4"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= render partial: "shared/form" %>
+
+

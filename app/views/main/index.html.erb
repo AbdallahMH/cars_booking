@@ -1,20 +1,26 @@
-<div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-  </div>
-  <ul class="list-group list-group-flush">
+<div style="box-sizing: border-box;  display: grid;  grid-column-gap: 1px;  grid-row-gap: 10px;  grid-template-columns: 0.2fr 0.2fr 0.2fr 0.2fr;">
 
-    <li class="list-group-item">
-      <!--This is the icon-->
-      <i class="fas fa-location-arrow"></i>
-      An item
-    </li>
-    <li class="list-group-item">A second item</li>
-    <li class="list-group-item">A third item</li>
-  </ul>
-  <div class="card-body">
-    <%= button_to "Book Car", car_details_path, class: "btn btn-primary" %>
-  </div>
+  <% @cars.each do |car| %>
+    <div class="card" style="width: 18rem; margin-top: 15px; margin-left: 15px; margin-right: 15px">
+      <img src="<%= car.images[0] %>" class="card-img-top" alt="NO CAR IMAGE">
+      <div class="card-body">
+        <h5 class="card-title"> <%= car.car_name %></h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+          content.</p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><i class="fas fa-tools"></i> <%= car.make %> </li>
+        <li class="list-group-item"><i class="fas fa-car"></i> <%= car.model %> </li>
+        <li class="list-group-item"><i class="fas fa-road"></i> <%= car.kilometers_traveled %> </li>
+
+        <li class="list-group-item"><i class="fas fa-calendar-alt"></i> <%= car.avaliable_from %> </li>
+        <li class="list-group-item"><i class="fas fa-calendar-alt"></i> <%= car.avaliable_until %> </li>
+
+        <li class="list-group-item"><i class="fas fa-location-arrow"></i> <%= car.latitude %> </li>
+      </ul>
+      <div class="card-body">
+        <%= link_to "Car Details", { controller: 'car', action: 'index', id: car.id }, class: "btn btn-primary" %>
+      </div>
+    </div>
+  <% end %>
 </div>

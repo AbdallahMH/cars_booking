@@ -1,0 +1,49 @@
+<% car = Car.find(params[:id]) %>
+<section class="position-relative py-4 py-xl-5">
+  <div class="container position-relative">
+    <div class="row d-flex justify-content-center">
+      <div class="col-md-8 col-lg-6 col-xl-5 col-xxl-4">
+        <div class="card mb-5">
+          <div class="card-body p-sm-5">
+            <h2 class="text-center mb-4"> Booking Checkout </h2>
+            <%= form_with model: @person, class: "form" do |f| %>
+              <div class="mb-3">
+                <%= f.label :name %>
+                <%= f.email_field :name, class: "form-control", placeholder: "john wick " %>
+              </div>
+              <div class="mb-3">
+                <%= f.label :email %>
+                <%= f.email_field :email, class: "form-control", placeholder: "john@gmail.com" %>
+              </div>
+
+              <div class="mb-3">
+                <%= f.label :password %>
+                <%= f.password_field :password, class: "form-control", placeholder: "password" %>
+              </div>
+
+              <div class="mb-3">
+                <%= f.label :birth_date %>
+                <%= f.datetime_select :birth_date, class: "form-control" %>
+              </div>
+
+              <input type="text" class="daterange"/>
+              # for a simple_form field just do something like this and include the above javascript
+               <%#= f.input :field_name, input_html: { class: "daterange" }, as: :string %>
+
+
+              <div class="d-grid gap-2 col-6 mx-auto">
+                <%= f.submit "Book Car", class: "btn btn-primary"%>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('input[class="daterange"]').daterangepicker();
+    });
+</script>
