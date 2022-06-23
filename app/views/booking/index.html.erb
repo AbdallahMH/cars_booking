@@ -1,4 +1,3 @@
-<h1> Booking Page </h1>
 <% car = Car.find(params[:id]) %>
 <div class="container d-flex flex-column align-items-center py-4 py-xl-5">
   <h2 id="car-name"> <%= car.car_name %> </h2>
@@ -12,5 +11,7 @@
 </div>
 
 <%= render partial: "shared/form" %>
+
+
 
 
