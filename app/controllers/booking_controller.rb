@@ -6,4 +6,8 @@ class BookingController < ApplicationController
     @id = params[:id]
   end
 
+  def create
+    redirect_to root_path, notice: "Booking was successfully created."
+  end
+
 end

@@ -3,20 +3,14 @@ class MainController < ApplicationController
     @cars = Car.order(:id)
   end
 
-
   def show
     @car = Car.find(params[:id])
     distance(@car.latitude, @car.longitude)
   end
 
-
   def new
-    # @count = Car.count
-    # @car = Car.new(id: @count + 1)
     @car = Car.new
   end
-
-
 
   def update
     @car = Car.find(params[:id])
@@ -28,6 +22,7 @@ class MainController < ApplicationController
   end
 
   private
+
   def car_params
     params.require(:car).permit(
       :car_name,
@@ -41,6 +36,4 @@ class MainController < ApplicationController
       :avaliable_until,
     )
   end
-
-
 end

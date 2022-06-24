@@ -13,8 +13,8 @@
         <li class="list-group-item"><i class="fas fa-car"></i> <%= car.model %> </li>
         <li class="list-group-item"><i class="fas fa-road"></i> <%= car.kilometers_traveled %> </li>
 
-        <li class="list-group-item"><i class="fas fa-calendar-alt"></i> <%= car.avaliable_from %> </li>
-        <li class="list-group-item"><i class="fas fa-calendar-alt"></i> <%= car.avaliable_until %> </li>
+        <li class="list-group-item"><i class="fas fa-calendar-alt"></i> <%= car.avaliable_from.strftime("%d/%m/%Y") %> </li>
+        <li class="list-group-item"><i class="fas fa-calendar-alt"></i> <%= car.avaliable_until.strftime("%d/%m/%Y") %> </li>
 
         <li class="list-group-item"><i class="fas fa-location-arrow"></i> <%= distance(car.latitude, car.longitude) %> KM </li>
       </ul>

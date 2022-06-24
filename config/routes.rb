@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   root to: "main#index"
   get "car_details", to: "car#index"
   get "booking", to: "booking#index"
+  post "booking", to: "booking#create"
 
 end
