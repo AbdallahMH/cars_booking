@@ -1,3 +1,4 @@
+
 class BookingController < ApplicationController
 
   def index

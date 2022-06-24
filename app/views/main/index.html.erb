@@ -16,7 +16,7 @@
         <li class="list-group-item"><i class="fas fa-calendar-alt"></i> <%= car.avaliable_from %> </li>
         <li class="list-group-item"><i class="fas fa-calendar-alt"></i> <%= car.avaliable_until %> </li>
 
-        <li class="list-group-item"><i class="fas fa-location-arrow"></i> <%= car.latitude %> </li>
+        <li class="list-group-item"><i class="fas fa-location-arrow"></i> <%= distance(car.latitude, car.longitude) %> KM </li>
       </ul>
       <div class="card-body">
         <%= link_to "Car Details", { controller: 'car', action: 'index', id: car.id }, class: "btn btn-primary" %>

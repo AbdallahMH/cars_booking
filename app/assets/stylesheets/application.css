@@ -12,4 +12,8 @@
  *
  *= require_tree .
  *= require_self
+ *= require Simple-Slider.css
+ *= require swiper-bundle.min.css
+ *= require bootstrap.min.css
+ *= require Features-Small-Icons-Color.css
  */
