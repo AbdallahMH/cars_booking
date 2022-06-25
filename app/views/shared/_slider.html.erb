@@ -1,6 +1,12 @@
 <% car = Car.find(params[:id]) %>
 
 
+<%= javascript_include_tag "Simple-Slider.js" %>
+<%= javascript_include_tag "swiper-bundle.min.js" %>
+<%= stylesheet_link_tag "Simple-Slider.css" %>
+<%= stylesheet_link_tag "swiper-bundle.min.css" %>
+
+
 <div class="simple-slider">
   <div class="swiper-container">
 
@@ -11,7 +17,6 @@
         </div>
       <% end %>
     </div>
-
     <div class="swiper-pagination"></div>
     <div class="swiper-button-prev"></div>
     <div class="swiper-button-next"></div>
