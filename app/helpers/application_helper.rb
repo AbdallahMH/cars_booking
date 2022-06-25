@@ -22,4 +22,11 @@ module ApplicationHelper
       dist = (dist * 1.609344).ceil
     end
   end
+
+  def date_from_parameters
+    if params[:car].present?
+      params[:car][:booking_date]
+    end
+  end
+
 end

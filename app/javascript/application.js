@@ -4,3 +4,8 @@ import "controllers"
 import "./Simple-Slider.js"
 import "./swiper-bundle.min.js"
 import "./bootstrap.min.js"
+import "./jquery.js
+import "./moment.min"
+import "./daterangepicker.js"
+
+

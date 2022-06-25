@@ -1,5 +1,6 @@
 <% car = Car.find(params[:id]) %>
-<% require 'date' %>
+
+<%= javascript_include_tag "daterangepicker_initializer.js" %>
 
 <section class="position-relative py-4 py-xl-5">
   <div class="container position-relative">
@@ -9,7 +10,7 @@
           <div class="card-body p-sm-5">
             <h2 class="text-center mb-4"> Booking Checkout </h2>
 
-            <%= form_with model: @car, class: "form" do |f| %>
+            <%= form_with model: @car, class: "form", remote: true do |f| %>
               <div class="mb-3">
                 <%= f.label :name %>
                 <%= f.email_field :name, class: "form-control", placeholder: "john wick " %>
@@ -25,13 +26,16 @@
               </div>
 
               <div class="mb-3">
-                <%= f.label :booking_date %>
-                <%= f.text_field :booking_date, class: 'form-control', data: { behavior: 'daterangepicker'} %>
+                <%= f.label :start_date %>
+                <%= f.datetime_field(:start_date, class: "form-control", min: ((car.avaliable_from.strftime('%Y-%m-%dT%H:%M'))), max:((car.avaliable_until.strftime('%Y-%m-%dT%H:%M'))) ) %>
+              </div>
+              <div class="mb-3">
+                <%= f.label :end_date %>
+                <%= f.datetime_field(:end_date, class: "form-control", min: ((car.avaliable_from.strftime('%Y-%m-%dT%H:%M'))), max:((car.avaliable_until.strftime('%Y-%m-%dT%H:%M'))) ) %>
               </div>
 
               <div class="d-grid gap-2 col-6 mx-auto">
                 <%= f.submit "Book Car", class: "btn btn-primary"%>
-                <%#= link_to "Book Car", { controller: 'booking', action: 'create', id: car.id }, class: "btn btn-primary" %>
               </div>
 
             <% end %>
@@ -41,27 +45,3 @@
     </div>
   </div>
 </section>
-
-<script>
-    //grey out not available dates
-    $(function() {
-        <%# avaliable_from = (car.avaliable_from.strftime("%Y%m%d")) %>
-        <%# avaliable_until = (car.avaliable_until.strftime("%Y%m%d")) %>
-<!--        var availableFrom = $(<%# avaliable_from %>);-->
-<!--        var availableUntil = $(<%# avaliable_until %>);-->
-
-        $('[data-behavior=daterangepicker]').daterangepicker({
-            "opens": "right",
-            // "minDate": availableFrom,
-            // "maxDate": availableUntil,
-            //  "startDate": availableFrom,
-            //  "endDate": availableUntil,
-            timePicker: true,
-            locale: {
-                format: 'M/DD hh:mm A'
-            }
-        });
-    });
-
-</script>
-
